@@ -1,23 +1,27 @@
-#include "holberton.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
- *  * main - check the code for Holberton School students.
- *   *
- *    * Return: Always 0.
+ *  * leet - encodes a string in 1337
+ *   * @s: string to be encoded
+ *    * Return: the resulting string;
  */
-int main(void)
+char *leet(char *s)
 {
-	char board[8][8] = {
-		{'r', 'k', 'b', 'q', 'k', 'b', 'k', 'r'},
-		{'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-		{' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-		{'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-		{'R', 'K', 'B', 'Q', 'K', 'B', 'K', 'R'},
-	};
-	print_chessboard(board);
-	return (0);
+	int i, j;
+
+	char *a = "aAeEoOtTlL";
+	char *b = "4433007711";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; j < 10; j++)
+		{
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+			}
+		}
+	}
+
+	return (s);
 }
